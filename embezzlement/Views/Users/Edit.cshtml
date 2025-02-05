@@ -1,0 +1,58 @@
+﻿@using embezzlement.ViewModels
+@model EditViewModel
+
+<h2>Create User</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<hr />
+
+<form asp-action="Edit" method="post">
+    
+    <input name="Id" type="hidden" value="@Model.Id" />
+
+    <div class="mb-3">
+        <label asp-for="FullName" class="form-label"></label>
+        <input asp-for="FullName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UserName" class="form-label"></label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ConfirmPassword" class="form-label"></label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control" />
+    </div>
+
+    <div>
+        <p>Select Role</p>
+        @foreach(var role in ViewBag.Roles)
+        {
+            <div class="form-check">
+                <input type="checkbox" 
+                    class="form-check-input" 
+                    name="SelectedRoles" 
+                    value="@role" 
+                    id="@role"
+                @(Model.SelectedRoles.Any(i => i == role) ? "checked" : "") 
+                >
+                
+                <label for="@role">@role</label>
+            </div>
+        }
+
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Save</button>
+</form>

@@ -1,0 +1,38 @@
+﻿@using Entites.Models;
+@model Item
+
+<h2>Create Item</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<hr />
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="ItemStockCode" class="form-label"></label>
+        <input asp-for="ItemStockCode" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ItemName" class="form-label"></label>
+        <input asp-for="ItemName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ItemDescription" class="form-label"></label>
+        <input asp-for="ItemDescription" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ItemType" class="form-label"></label>
+        <input asp-for="ItemType" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ItemCount" class="form-label"></label>
+        <input asp-for="ItemCount" type="number" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Save</button>
+    <a asp-action="Index" class="btn btn-danger">Back</a>
+</form>

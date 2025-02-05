@@ -1,0 +1,17 @@
+﻿@using IdentityApp.Models
+@model AppRole
+
+<h2>Create User</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<hr />
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Save</button>
+</form>

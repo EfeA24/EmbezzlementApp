@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Entites.Models;
 using Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace YourNamespace.Controllers
@@ -14,6 +15,7 @@ namespace YourNamespace.Controllers
             _itemRepository = itemRepository;
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var items = await _itemRepository.GetAllItemsAsync();

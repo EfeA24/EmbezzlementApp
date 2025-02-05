@@ -1,10 +1,12 @@
-﻿using IdentityApp.Models;
-using IdentityApp.ViewModels;
+﻿using embezzlement.Models;
+using embezzlement.ViewModels;
+using Entites.Models;
+using IdentityApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IdentityApp.Controllers
+namespace embezzlement.Controllers
 {
     public class AccountController : Controller
     {
@@ -12,18 +14,15 @@ namespace IdentityApp.Controllers
         private UserManager<AppUser> _userManager;
         private RoleManager<AppRole> _roleManager;
         private SignInManager<AppUser> _signinManager;
-        private IEmailSender _emailSender;
         public AccountController(
             UserManager<AppUser> userManager,
             RoleManager<AppRole> roleManager,
-            SignInManager<AppUser> signinManager,
-            IEmailSender emailSender
+            SignInManager<AppUser> signinManager
             )
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signinManager = signinManager;
-            _emailSender = emailSender;
         }
         public IActionResult Login()
         {
@@ -96,23 +95,6 @@ namespace IdentityApp.Controllers
 
                 IdentityResult result = await _userManager.CreateAsync(user, model.Password);
 
-                if (result.Succeeded)
-                {
-                    var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    var url = Url.Action("ConfirmEmail", "Account", new { user.Id, token });
-
-                    //email
-                    await _emailSender.SendEmailAsync
-                        (
-                            user.Email,
-                            "Account Confirmation",
-                            "Click to the <a href='https://localhost:7041{url}' >link</a> to confirm your e-mail"
-
-                        );
-
-                    TempData["message"] = "Activate your account via email";
-                    return RedirectToAction("Login", "Account");
-                }
 
                 foreach (IdentityError error in result.Errors)
                 {

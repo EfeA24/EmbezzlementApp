@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace IdentityApp.ViewModels
+namespace embezzlement.ViewModels
 {
     public class LoginViewModel
     {

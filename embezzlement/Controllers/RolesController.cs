@@ -1,4 +1,5 @@
-﻿using IdentityApp.Models;
+﻿using Entites.Models;
+using IdentityApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
