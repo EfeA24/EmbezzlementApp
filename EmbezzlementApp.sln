@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "embezzlement", "embezzlement\embezzlement.csproj", "{59BC79FA-0221-4A4C-B49F-08DD8DD2C9F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entites", "Entites\Entites.csproj", "{71F4E92F-A4AC-406E-B802-7127D9DB6303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{CF8AE4E9-1BDC-43C7-898C-8FA44F065AD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59BC79FA-0221-4A4C-B49F-08DD8DD2C9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59BC79FA-0221-4A4C-B49F-08DD8DD2C9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59BC79FA-0221-4A4C-B49F-08DD8DD2C9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59BC79FA-0221-4A4C-B49F-08DD8DD2C9F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F4E92F-A4AC-406E-B802-7127D9DB6303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F4E92F-A4AC-406E-B802-7127D9DB6303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F4E92F-A4AC-406E-B802-7127D9DB6303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F4E92F-A4AC-406E-B802-7127D9DB6303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF8AE4E9-1BDC-43C7-898C-8FA44F065AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8AE4E9-1BDC-43C7-898C-8FA44F065AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8AE4E9-1BDC-43C7-898C-8FA44F065AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8AE4E9-1BDC-43C7-898C-8FA44F065AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
