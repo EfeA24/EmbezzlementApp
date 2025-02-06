@@ -1,0 +1,27 @@
+﻿@model embezzlement.Models.Embezzlement
+
+@{
+    ViewData["Title"] = "Delete Embezzlement";
+}
+
+<h2>Are you sure you want to delete this?</h2>
+
+<dl class="dl-horizontal">
+    <dt>Item:</dt>
+    <dd>@Model.Item.ItemName</dd>
+
+    <dt>User:</dt>
+    <dd>@Model.AppUser.UserName</dd>
+
+    <dt>Handover Date:</dt>
+    <dd>@Model.HandoverDate?.ToString("yyyy-MM-dd")</dd>
+
+    <dt>Return Time:</dt>
+    <dd>@Model.ReturnTime?.ToString("yyyy-MM-dd")</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<embezzlement.Models.Embezzlement>
+
+@{
+    ViewData["Title"] = "Embezzlement List";
+}
+
+<h2>Embezzlement List</h2>
+
+<a asp-action="Create" class="btn btn-primary">+ New Embezzlement</a>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>User</th>
+            <th>Handover Date</th>
+            <th>Return Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Item.ItemName</td>
+                <td>@item.AppUser.UserName</td>
+                <td>@item.HandoverDate?.ToString("yyyy-MM-dd")</td>
+                <td>@item.ReturnTime?.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

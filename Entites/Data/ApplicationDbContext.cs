@@ -1,4 +1,5 @@
-﻿using Entites.Models;
+﻿using embezzlement.Models;
+using Entites.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Entities.Data
         }
 
         public DbSet<Item> Items { get; set; }
-
+        public DbSet<Embezzlement> Embezzlements { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Item>(entity =>

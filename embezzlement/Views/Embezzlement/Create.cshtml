@@ -1,0 +1,11 @@
+﻿@model embezzlement.ViewModels.EmbezzlementViewModel
+
+@{
+    ViewData["Title"] = "New Embezzlement";
+}
+
+<h2>Create Embezzlement</h2>
+
+<form asp-action="Create" method="post">
+    @Html.Partial("_Form")
+</form>

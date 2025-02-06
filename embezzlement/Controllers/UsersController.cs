@@ -109,7 +109,7 @@ namespace IdentityApp.Controllers
 
                 if (user != null)
                 {
-                    user.Email = model.Email;  //sor
+                    user.Email = model.Email;
                     user.FullName = model.FullName;
 
                     var result = await _userManager.UpdateAsync(user);
